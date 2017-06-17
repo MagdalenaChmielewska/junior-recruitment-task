@@ -1,1 +1,64 @@
-plik startowy aplikacji
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="ToDo List">
+    <meta name="author" content="Magdalena Chmielewska">
+    <title>ToDo List</title>
+    <link href="style/style.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <main>
+        <header class="page-header">
+            <span></span>
+            <h1>ToDo List</h1>
+        </header>
+        <form class="todo-list">
+            <div id="todos">
+                <ul class="tasks">
+                    <li class="single-task">
+                        <span></span>
+                        <input type="checkbox" id="checkbox">
+                        <label for="checkbox" class="description">Task1</label>
+                        <button aria-label="Remove-task">
+                            <img src="images/trash.png" class="remove-icon">
+                        </button>
+                    </li>
+                    <li class="single-task">
+                        <span></span>
+                        <input type="checkbox" id="checkbox1">
+                        <label for="checkbox1" class="description">Task2</label>
+                        <button aria-label="Remove-task">
+                            <img src="images/trash.png" class="remove-icon">
+                        </button>
+                    </li>
+                    <li class="single-task">
+                        <span></span>
+                        <input type="checkbox" id="checkbox2">
+                        <label for="checkbox2" class="description">Task3</label>
+                        <button aria-label="Remove-task">
+                            <img src="images/trash.png" class="remove-icon">
+                        </button>
+                    </li>
+                    <li class="single-task">
+                        <span></span>
+                        <input type="checkbox" id="checkbox3">
+                        <label for="checkbox3" class="description">Task4</label>
+                        <button aria-label="Remove-task">
+                            <img src="images/trash.png" class="remove-icon">
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="add-panel">
+                <input type="submit" value="&#10010;" class="add-task"> 
+                <input id="input-task" placeholder="What needs to be done?" autofocus>
+            </div>
+        </form>
+    </main>
+
+  </body>
+</html>
