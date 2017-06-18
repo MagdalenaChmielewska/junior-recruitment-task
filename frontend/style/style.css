@@ -17,161 +17,193 @@ time, mark, audio, video {
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline; }
+  vertical-align: baseline;
+}
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-  display: block; }
+  display: block;
+}
 
 body {
-  line-height: 1; }
+  line-height: 1;
+}
 
 ol, ul {
-  list-style: none; }
+  list-style: none;
+}
 
 blockquote {
-  quotes: none; }
-  blockquote:before, blockquote:after {
-    content: '';
-    content: none; }
+  quotes: none;
+}
+blockquote:before, blockquote:after {
+  content: '';
+  content: none;
+}
 
 q {
-  quotes: none; }
-  q:before, q:after {
-    content: '';
-    content: none; }
+  quotes: none;
+}
+q:before, q:after {
+  content: '';
+  content: none;
+}
 
 table {
   border-collapse: collapse;
-  border-spacing: 0; }
+  border-spacing: 0;
+}
 
 * {
-  box-sizing: border-box; }
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
 
 html {
-  font-size: 10px; }
+  font-size: 10px;
+}
 
 body {
   height: 100%;
   font-family: "Lato", sans-serif;
   background-color: #E9F0F4;
   font-size: 1.6rem;
-  line-height: auto; }
+  line-height: auto;
+}
 
 main {
-  width: 100vw;
   text-align: center;
+  padding: 20% 5%;
+}
+@media only screen and (orientation: landscape) {
+  main {
+    padding: 10% 5%;
+  }
+}
+@media only screen and (min-width: 1025px) and (orientation: landscape) {
+  main {
+    padding: 10% 30%;
+  }
+}
+main .page-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  background-color: #2E3641;
+}
+main .page-header span {
+  border-right: 1px solid #454F5C;
+  padding: 18px 14.5px;
+  margin-right: 3px;
+}
+main .page-header h1 {
+  color: #DAE4EB;
+  padding: 10px 8px;
+  text-align: left;
+  border-left: 1px solid #454F5C;
+}
+main .tasks .single-task {
+  font-size: 1.4rem;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #E6EBED;
+}
+main .tasks .single-task span {
+  border-right: 1px solid #F2E3DF;
+  padding: 18px 14.5px;
+  margin-right: 3px;
+}
+main .tasks .single-task button {
+  background: none;
+  border: none;
   position: absolute;
-  top: 30%;
-  left: 50%;
-  padding: 0 5%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%); }
-  @media only screen and (orientation: landscape) {
-    main {
-      top: 170px; } }
-  @media only screen and (min-width: 1025px) and (orientation: landscape) {
-    main {
-      top: 30%;
-      padding: 0 30%; } }
-  main .page-header {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    background-color: #2E3641; }
-    main .page-header span {
-      border-right: 1px solid #454F5C;
-      padding: 18px 14.5px;
-      margin-right: 3px; }
-    main .page-header h1 {
-      color: #DAE4EB;
-      padding: 10px 8px;
-      text-align: left;
-      border-left: 1px solid #454F5C; }
-  main .tasks .single-task {
-    font-size: 1.4rem;
-    position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    background-color: #FFFFFF;
-    border-bottom: 1px solid #E6EBED; }
-    main .tasks .single-task span {
-      border-right: 1px solid #F2E3DF;
-      padding: 18px 14.5px;
-      margin-right: 3px; }
-    main .tasks .single-task button {
-      background: none;
-      border: none;
-      position: absolute;
-      right: 12px;
-      top: 11px; }
-    main .tasks .single-task input[type=checkbox] {
-      display: none; }
-    main .tasks .single-task .description {
-      padding: 10px 8px;
-      text-align: left;
-      border-left: 1px solid #F2E3DF;
-      cursor: pointer;
-      display: inline-block; }
-      main .tasks .single-task .description:before {
-        content: '';
-        position: absolute;
-        border: 1px solid #DAE4EB;
-        width: 7px;
-        height: 8px;
-        top: 14px;
-        left: 9.5px; }
-    main .tasks .single-task input[type=checkbox]:checked + .description:before {
-      content: "\2714";
-      font-weight: bold;
-      color: #A8BD59;
-      font-size: 0.85rem; }
-    main .tasks .single-task input[type="checkbox"]:checked + label {
-      text-decoration: line-through;
-      color: #9EB2C0; }
-    main .tasks .single-task input[type="checkbox"]:checked ~ button {
-      opacity: 0.4; }
-  main .add-panel {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    background-color: #FFFFFF; }
-    main .add-panel .add-task {
-      color: #9EB2C0;
-      background: none;
-      border: none;
-      border-right: 1px solid #F2E3DF;
-      padding: 9px 8.5px;
-      margin-right: 3px;
-      cursor: pointer;
-      transition: all 0.30s ease-in-out; }
-      main .add-panel .add-task:hover {
-        color: #2E3641; }
-    main .add-panel #input-task {
-      width: 100%;
-      border: none;
-      border-left: 1px solid #F2E3DF;
-      padding: 10px 8px;
-      transition: all 0.30s ease-in-out; }
-      main .add-panel #input-task:focus {
-        outline: none;
-        box-shadow: 2px 6px 41px -12px #2f3033; }
-    main .add-panel ::-webkit-input-placeholder {
-      opacity: 0.7;
-      font-style: italic; }
-
-/*# sourceMappingURL=style.css.map */
+  right: 12px;
+  top: 11px;
+}
+main .tasks .single-task input[type=checkbox] {
+  display: none;
+}
+main .tasks .single-task .description {
+  color: #2E3641;
+  padding: 10px 8px;
+  text-align: left;
+  border-left: 1px solid #F2E3DF;
+  cursor: pointer;
+  display: inline-block;
+}
+main .tasks .single-task .description:before {
+  content: '';
+  position: absolute;
+  border: 1px solid #DAE4EB;
+  width: 7px;
+  height: 8px;
+  top: 14px;
+  left: 9.5px;
+}
+main .tasks .single-task input[type=checkbox]:checked + .description:before {
+  content: "\2714";
+  font-weight: bold;
+  color: #A8BD59;
+  font-size: 0.85rem;
+}
+main .tasks .single-task input[type="checkbox"]:checked + label {
+  text-decoration: line-through;
+  color: #9EB2C0;
+}
+main .tasks .single-task input[type="checkbox"]:checked ~ button {
+  opacity: 0.4;
+}
+main .add-panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  background-color: #FFFFFF;
+}
+main .add-panel .add-task {
+  color: #9EB2C0;
+  background: none;
+  border: none;
+  border-right: 1px solid #F2E3DF;
+  padding: 9px 8.5px;
+  margin-right: 3px;
+  cursor: pointer;
+  -webkit-transition: all 0.30s ease-in-out;
+  transition: all 0.30s ease-in-out;
+}
+main .add-panel .add-task:hover {
+  color: #2E3641;
+}
+main .add-panel #input-task {
+  width: 100%;
+  border: none;
+  border-left: 1px solid #F2E3DF;
+  padding: 10px 8px;
+  -webkit-transition: all 0.30s ease-in-out;
+  transition: all 0.30s ease-in-out;
+  font-family: "Lato", sans-serif;
+}
+main .add-panel #input-task:focus {
+  outline: none;
+  -webkit-box-shadow: 2px 6px 41px -12px #2f3033;
+          box-shadow: 2px 6px 41px -12px #2f3033;
+}
+main .add-panel ::-webkit-input-placeholder {
+  opacity: 0.7;
+  font-style: italic;
+}

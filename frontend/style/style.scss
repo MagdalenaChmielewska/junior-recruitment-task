@@ -5,8 +5,10 @@ $font-family-main: 'Lato', sans-serif;
 $main-color: #2E3641;
 $second-color: #9EB2C0;
 $third-color: #DAE4EB;
+$main-border-color: #F2E3DF;
+$second-border-color: #454F5C;
+$color-white: #FFFFFF;
 
-$up768: "only screen and (min-width: 768px)";
 $landscape: "only screen and (orientation: landscape)";
 $up1024-landscape: "only screen and (min-width: 1025px) and (orientation: landscape)";
 
@@ -20,10 +22,6 @@ $up1024-landscape: "only screen and (min-width: 1025px) and (orientation: landsc
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
-}
-@mixin transform ($how) {
-  -webkit-transform: $how;
-          transform: $how;
 }
 @mixin border-left ($color) {
     border-left: 1px solid $color;
@@ -51,24 +49,18 @@ body {
     line-height: auto;
 }
 main {
-    width: 100vw;
     text-align: center;
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    padding: 0 5%;
-    @include transform(translate(-50%, -50%));
+    padding: 20% 5%;
     @media #{$landscape} {
-        top: 170px;
+        padding: 10% 5%;
     }
     @media #{$up1024-landscape} {
-        top: 30%;
-        padding: 0 30%;
+        padding: 10% 30%;
     }
     .page-header {
         @include view-todo ($main-color);
         span {
-            @include border-right (#454F5C);
+            @include border-right ($second-border-color);
             padding: 18px 14.5px;
             margin-right: 3px;
         }
@@ -76,17 +68,17 @@ main {
             color: $third-color;
             padding: 10px 8px;
             text-align: left;
-            @include border-left (#454F5C);
+            @include border-left ($second-border-color);
         }
     }
     .tasks {
         .single-task {
             font-size: 1.4rem;
             position: relative;
-            @include view-todo (#FFFFFF);
+            @include view-todo ($color-white);
             border-bottom: 1px solid #E6EBED;
             span {
-                @include border-right (#F2E3DF);
+                @include border-right ($main-border-color);
                 padding: 18px 14.5px;
                 margin-right: 3px;
             }
@@ -101,9 +93,10 @@ main {
                 display: none;
             }
             .description {
+                color: $main-color;
                 padding: 10px 8px;
                 text-align: left;
-                @include border-left (#F2E3DF);
+                @include border-left ($main-border-color);
                 cursor: pointer;
                 display: inline-block;
                 &:before {
@@ -134,12 +127,12 @@ main {
         }
     }
     .add-panel {
-        @include view-todo (#FFFFFF);
+        @include view-todo ($color-white);
         .add-task {
             color: $second-color;
             background: none;
             border: none;
-            @include border-right (#F2E3DF);
+            @include border-right ($main-border-color);
             padding: 9px 8.5px;
             margin-right: 3px;
             cursor: pointer;
@@ -151,9 +144,10 @@ main {
         #input-task {
             width: 100%;
             border: none;
-            @include border-left (#F2E3DF);
+            @include border-left ($main-border-color);
             padding: 10px 8px;
             transition: all 0.30s ease-in-out;
+            font-family: $font-family-main;
             &:focus {
                 outline: none;
                 box-shadow: 2px 6px 41px -12px rgba(47,48,51,1);

@@ -17,48 +17,15 @@
             <h1>ToDo List</h1>
         </header>
         <form class="todo-list">
-            <div id="todos">
-                <ul class="tasks">
-                    <li class="single-task">
-                        <span></span>
-                        <input type="checkbox" id="checkbox">
-                        <label for="checkbox" class="description">Task1</label>
-                        <button aria-label="Remove-task">
-                            <img src="images/trash.png" class="remove-icon">
-                        </button>
-                    </li>
-                    <li class="single-task">
-                        <span></span>
-                        <input type="checkbox" id="checkbox1">
-                        <label for="checkbox1" class="description">Task2</label>
-                        <button aria-label="Remove-task">
-                            <img src="images/trash.png" class="remove-icon">
-                        </button>
-                    </li>
-                    <li class="single-task">
-                        <span></span>
-                        <input type="checkbox" id="checkbox2">
-                        <label for="checkbox2" class="description">Task3</label>
-                        <button aria-label="Remove-task">
-                            <img src="images/trash.png" class="remove-icon">
-                        </button>
-                    </li>
-                    <li class="single-task">
-                        <span></span>
-                        <input type="checkbox" id="checkbox3">
-                        <label for="checkbox3" class="description">Task4</label>
-                        <button aria-label="Remove-task">
-                            <img src="images/trash.png" class="remove-icon">
-                        </button>
-                    </li>
-                </ul>
-            </div>
+            <div id="todos"></div>
             <div class="add-panel">
-                <input type="submit" value="&#10010;" class="add-task"> 
-                <input id="input-task" placeholder="What needs to be done?" autofocus>
+                <input id="add" type="submit" value="&#10010;" class="add-task"> 
+                <input onfocus="clearField(this);" id="input-task" type="text" minlength=1 placeholder="What needs to be done?" autofocus>
             </div>
         </form>
     </main>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/todo.js"></script>
   </body>
 </html>
