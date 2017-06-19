@@ -127,6 +127,7 @@ main {
         }
     }
     .add-panel {
+        position: relative;        
         @include view-todo ($color-white);
         .add-task {
             color: $second-color;
@@ -151,6 +152,24 @@ main {
             &:focus {
                 outline: none;
                 box-shadow: 2px 6px 41px -12px rgba(47,48,51,1);
+            }
+        }
+        .error {
+            display: none;
+            &.wrong-input {
+                display: block;
+                position: absolute;
+                top: 50px;
+                left: 20px;
+                width: 90%;
+                color: $color-white;
+                text-align: center;
+                font-style: italic;
+                background-color: #A60D06;
+                border: 1px solid #601515;
+                box-shadow: 0px 0px 24px -2px rgba(0,0,0,0.75);
+                border-radius: 5px;
+                padding: 10px;
             }
         }
         ::-webkit-input-placeholder {

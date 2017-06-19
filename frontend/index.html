@@ -17,10 +17,11 @@
             <h1>ToDo List</h1>
         </header>
         <form class="todo-list">
-            <div id="todos"></div>
+            <ul id="todos" class="tasks"></ul>
             <div class="add-panel">
                 <input id="add" type="submit" value="&#10010;" class="add-task"> 
-                <input onfocus="clearField(this);" id="input-task" type="text" minlength=1 placeholder="What needs to be done?" autofocus>
+                <input id="input-task" type="text" minlength=1 placeholder="What needs to be done?" autofocus>
+                <span class="error">You can't add task without description. Please add at least one sign.</span>
             </div>
         </form>
     </main>

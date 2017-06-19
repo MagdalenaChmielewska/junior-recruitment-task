@@ -2,8 +2,7 @@ const gulp = require('gulp'),
       nodemon = require('gulp-nodemon'),  
       sass = require('gulp-ruby-sass'),
       autoprefixer = require('gulp-autoprefixer')
-      livereload = require('gulp-livereload'),  
-      include = require("gulp-include");
+      livereload = require('gulp-livereload');
 
 gulp.task('styles', function() {  
   return sass('frontend/style/*.scss', { style: 'expanded' })
@@ -11,11 +10,9 @@ gulp.task('styles', function() {
     .pipe(gulp.dest('frontend/style'))
     .pipe(livereload());
 });
-
+        
 gulp.task('scripts', function() {  
   return gulp.src('frontend/js/*.js')
-    .pipe(include())
-      .on('error', console.log)
     .pipe(livereload());
 });
 
