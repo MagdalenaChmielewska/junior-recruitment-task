@@ -6,7 +6,7 @@ const express = require('express'),
 
 const app = express()
 
-app.use('/to-do-list/frontend', webapp);
+app.use('/to-do-list', webapp);
 app.use('/to-do-list/backend', api);
 
 app.use(function(err, req, res, next){

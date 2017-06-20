@@ -8,7 +8,7 @@ webapp.use("/style", express.static(path.join(frontendDirPath, 'style')));
 webapp.use("/images", express.static(path.join(frontendDirPath, 'images')));
 webapp.use("/js", express.static(path.join(frontendDirPath, 'js')));
 
-webapp.get('/',function(req,res) {
+webapp.get('/frontend',function(req,res) {
   const indexHtmlPath = path.join(frontendDirPath, 'index.html')
   res.sendFile(indexHtmlPath);
 });
