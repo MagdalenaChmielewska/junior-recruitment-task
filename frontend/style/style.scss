@@ -77,6 +77,12 @@ main {
             position: relative;
             @include view-todo ($color-white);
             border-bottom: 1px solid #E6EBED;
+            cursor: move;
+            will-change: transform;
+            transition: all 200ms;
+            &.over {
+                transform: scale(1.1, 1.1);
+            }
             span {
                 @include border-right ($main-border-color);
                 padding: 18px 14.5px;

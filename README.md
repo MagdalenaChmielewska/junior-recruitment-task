@@ -1,6 +1,7 @@
 # ToDo List  
 
-The application allows you to add, view, and mark as done tasks that are seved in the `SQLite` database.  
+The application allows you to add, view and mark as done tasks that are seved in the `SQLite` database.  
+It is also possible to rearange position of tasks using drag and drop.
 
   - Application is available under url: `http://localhost/to-do-list`.
   - Frontend: `http://localhost/to-do-list/frontend`.

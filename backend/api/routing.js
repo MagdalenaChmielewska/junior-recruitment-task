@@ -5,18 +5,18 @@ const express = require('express'),
       Db = require('./../db.js');
       
 const dbFile = "db.db";
-const database = new Db(dbFile)
+const database = new Db(dbFile);
 
-const api = express()
+const api = express();
 
 api.use(bodyParser.json());
 
 /** 
  * Read all tasks
  */
-api.get('/tasks', function (req, res, next) {
-  database.readTasks(function(err, result) {
-    if(err) next(err)
+api.get('/tasks', (req, res, next) => {
+  database.readTasks((err, result) => {
+    if (err) next(err)
     else res.json(result)
   });  
 })
@@ -24,9 +24,9 @@ api.get('/tasks', function (req, res, next) {
 /** 
  * Create new task
  */
-api.post('/tasks', validate(Validation.addingTaskSchema), function (req, res, next) {
-  database.createTask(req.body.description, function(err, result) { 
-    if(err) next(err)
+api.post('/tasks', validate(Validation.addingTaskSchema), (req, res, next) => {
+  database.createTask(req.body, (err, result) => { 
+    if (err) next(err)
     else res.status(201).end()
   });
 })
@@ -34,21 +34,33 @@ api.post('/tasks', validate(Validation.addingTaskSchema), function (req, res, ne
 /** 
  * Delete task with given id
  */
-api.delete('/tasks/:id', function (req, res, next) {
-  database.deleteTask(req.params.id, function(err, result) {  
-    if(err) next(err)
+api.delete('/tasks/:id', (req, res, next) => {
+  database.deleteTask(req.params.id, (err, result) => {  
+    if (err) next(err)
     else res.end()
   });  
 })
 
 /** 
- * Update task with given id
+ * Update status of task with given id
  */
-api.patch('/tasks/:id', validate(Validation.updatingTaskSchema),  function (req, res, next) {
-  database.updateTask(req.params.id, req.body.completed, function(err, result) { 
-    if(err) next(err)
+api.patch('/tasks/:id', validate(Validation.updateStatusOfTaskSchema), (req, res, next) => {
+  database.updateTaskStatus(req.params.id, req.body.completed, (err, result) => { 
+    if (err) next(err)
     else res.end()
   });  
+})
+
+/** 
+ * Change position of task with given id
+ */
+api.post('/tasks/:id/changePosition', validate(Validation.changePositionOfTaskSchema), (req, res, next) => {
+  let body = req.body;
+
+  database.updateTaskPosition(req.params.id, body.previousPosition, body.newPosition, (err, result) => { 
+    if (err) next(err)
+    else res.end()
+  }); 
 })
 
 module.exports = api;

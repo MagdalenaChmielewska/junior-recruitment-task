@@ -1,7 +1,7 @@
 const gulp = require('gulp'),
       nodemon = require('gulp-nodemon'),  
       sass = require('gulp-ruby-sass'),
-      autoprefixer = require('gulp-autoprefixer')
+      autoprefixer = require('gulp-autoprefixer'),
       livereload = require('gulp-livereload');
 
 gulp.task('styles', function() {  

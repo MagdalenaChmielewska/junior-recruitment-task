@@ -4,15 +4,15 @@ const express = require('express'),
       api = require('./api/routing.js'),
       webapp = require('./webapp/routing.js');
 
-const app = express()
+const app = express();
 
 app.use('/to-do-list', webapp);
 app.use('/to-do-list/backend', api);
 
-app.use(function(err, req, res, next){
+app.use((err, req, res, next) => {
   res.status(400).json(err);
 });
 
-app.listen(80, function () {
-  console.log('ToDo List listening on port 80!')
-})
+app.listen(80, () => {
+  console.log('ToDo List listening on port 80!');
+});

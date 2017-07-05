@@ -119,6 +119,14 @@ main .tasks .single-task {
   flex-direction: row;
   background-color: #FFFFFF;
   border-bottom: 1px solid #E6EBED;
+  cursor: move;
+  will-change: transform;
+  -webkit-transition: all 200ms;
+  transition: all 200ms;
+}
+main .tasks .single-task.over {
+  -webkit-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
 }
 main .tasks .single-task span {
   border-right: 1px solid #F2E3DF;
